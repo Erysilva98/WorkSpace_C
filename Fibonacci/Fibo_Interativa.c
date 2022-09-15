@@ -1,32 +1,41 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int fiboInterativa(){
+int fibonacciI(int n){
     
-    int n, i, t1, t2, proxTermo = 0;
+    int t1 = 0, t2 = 1, proxTermo, i =2;
 
-    for (i =0; i <= n; i ++){
-        
-        if (proxTermo == 0){
-            return(1);
+    if (n==1)
+        return t1;
+    else
+    {
+        if(n==2)
+            return t2;
+        else
+        {
+            while ( i < n)
+            {
+                proxTermo = t1 + t2;
+                t1 = t2;
+                t2 = proxTermo;
+                i++;
+            }
+            return proxTermo;
         }
-        else{
             
-        }
     }
 
     return 0;
 }
 
 int main(){
-    int n ; 
 
-    printf("\n Função Interativa: Sequência de Fibonacci ");
-   
-    printf("Informe a Quantidade de Termo: ");
-    scanf("%i", &n);
-    fiboInterativa(n);
-    
-    
+    int n;
+
+    printf("\n Quantos Termos deseja somar: ");
+    scanf("%d", &n);
+    printf("\n A Sequẽncia Fibonacci Interativa %d é: %d\n", n, fibonacciI(n));
+    printf("\n");
     
     return 0;
 
