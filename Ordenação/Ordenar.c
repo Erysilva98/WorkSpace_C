@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>       // para clock()
 
-int bublSort(int vetor[], int tam)
+int bubbleSort(int vetor[], int tam)
 {
     clock_t tempo;
     int i, j, temp, troca;
@@ -122,7 +122,7 @@ int main()
     }
     printf("\n \n");
 
-    bublSort(vetor, tam);
+    bubbleSort(vetor, tam);
     insertionSort(vetor, tam);
     selectionSort(vetor, tam);
 
