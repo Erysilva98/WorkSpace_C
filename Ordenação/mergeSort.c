@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>       // para clock()
 
 void Intercala(int vetor[], int inicio, int meio, int final);
 void mergeSort(int vetor[], int inicio, int final);
@@ -10,15 +11,24 @@ int main()
     int vetor[] = {9, 4, 8, 1, 7, 0, 3, 2, 5, 6};
 
     int i, pos = 0, tam = 10;
+    clock_t tempo;
 
     printf("\n Vetor a ser Ordenado\n");
     printArray(vetor, tam);
 
+    tempo = clock(); // Tempo Inicial
+
     mergeSort(vetor, pos, tam);
 
-    printf("\n Vetor Ordenado com Merge Sort \n");
+    tempo = clock() - tempo; // Tempo Final
+
+    printf("\n Vetor Ordenado com Merge Sort");
+    printf(" em : %lf ",((double)tempo)/((CLOCKS_PER_SEC/1000)));
+    printf("m/s \n");
+
     printArray(vetor, tam);
 
+    
     printf("\n");
 
    return 0;
